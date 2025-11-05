@@ -696,26 +696,7 @@ def main():
     print(f"⚠ Underestimation of sigma3^2: {var_errors[2]:.3f} units")
     print(f"✓ EM converged in {convergence_info['iterations']} iterations")
     
-    # ========================================================================
-    # STEP 5: VISUALIZATION GENERATION
-    # ========================================================================
     
-    print(f"\n" + "="*60)
-    print("STEP 5: GENERATING COMPREHENSIVE VISUALIZATIONS")
-    print("="*60)
-    
-    # Create comprehensive visualization
-    fig1 = create_comprehensive_visualization(omega1_data, mu_mle, sigma_mle, 
-                                            mu_em, sigma_em, log_likelihoods, missing_indices)
-    
-    plt.savefig('complete_analysis_results.png', dpi=300, bbox_inches='tight')
-    print(f"✓ Comprehensive analysis saved: complete_analysis_results.png")
-    
-    # Create AIC/BIC visualization
-    fig2 = create_aic_bic_visualization(results_complete, results_missing)
-    
-    plt.savefig('aic_bic_analysis.png', dpi=300, bbox_inches='tight')
-    print(f"✓ AIC/BIC analysis saved: aic_bic_analysis.png")
     
     # ========================================================================
     # FINAL SUMMARY
@@ -738,10 +719,7 @@ def main():
     print(f"• EM convergence: {convergence_info['iterations']} iterations")
     print(f"• Parameter estimation error: {mse_means:.2e}")
     print(f"• Covariance structure preservation: {det_ratio:.1%}")
-    
-    print(f"\nGENERATED FILES:")
-    print(f"• complete_analysis_results.png - Comprehensive visualization")
-    print(f"• aic_bic_analysis.png - Model selection analysis")
+
     
     print(f"\nANALYSIS COMPLETE!")
     print(f"   All objectives achieved:")
